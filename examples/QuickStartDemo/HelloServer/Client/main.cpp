@@ -95,7 +95,7 @@ void syncCall(int c)
 				requst = buffer;
 				param.pPrx->testHello(requst, response);
 			}
-			cout<< "i=" << i << " requst=" << requst << " response" = response << endl;
+			cout<< "i=" << i << " requst=" << requst << " response" << response << endl;
         }
         catch(exception& e)
         {
