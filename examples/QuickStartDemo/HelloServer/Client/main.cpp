@@ -78,20 +78,24 @@ struct HelloCallback : public HelloPrxCallback
 void syncCall(int c)
 {
 	string buffer(param.buffersize, 'a');
+	cout << "buffer=" << buffer << endl;
 
 	int64_t t = TC_Common::now2us();
     //发起远程调用
     for (int i = 0; i < c; ++i)
     {
-        string r;
-
+        string requst;
+		string response;
         try
         {
 			if(param.hash) {
-				param.pPrx->tars_hash(i)->testHello(buffer + "-" + TC_Common::tostr(i), r);
+				requst = buffer + "-" + TC_Common::tostr(i);
+				param.pPrx->tars_hash(i)->testHello(requst, response);
 			} else {
-				param.pPrx->testHello(buffer, r);
+				requst = buffer;
+				param.pPrx->testHello(requst, response);
 			}
+			cout<< "i=" << i << " requst=" << requst << " response" = response << endl;
         }
         catch(exception& e)
         {

@@ -39,7 +39,7 @@ int HelloImp::doClose(tars::TarsCurrentPtr current)
 }
 int HelloImp::testHello(const std::string &sReq, std::string &sRsp, tars::TarsCurrentPtr current)
 {
-//    TLOGDEBUG("HelloImp::testHellosReq:"<<sReq<<endl);
+    TLOGDEBUG("tonylzhou HelloImp::testHellosReq:"<<sReq<<endl);
     sRsp = sReq;
     return 0;
 }
