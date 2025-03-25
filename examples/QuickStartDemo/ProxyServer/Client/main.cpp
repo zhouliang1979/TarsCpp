@@ -36,9 +36,8 @@ int main(int argc,char ** argv)
             int i = 10000;
             while(i-- >= 0)
             {
-                string sReq("hello");
+                string sReq = "hello-" + TC_Common::tostr(i);
                 string sRsp("");
-
                 int iRet = prx->testProxy(sReq, sRsp);
 
                 assert(iRet == 0);
